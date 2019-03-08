@@ -9,6 +9,14 @@ def remove_empty_lines():
     with open('history.txt' , 'w') as f:
         f.write(''.join(lines))
 
+def isFloat(num):
+    try:
+        float(num)
+        return True
+    except ValueError:
+        return False
+
+
 
 def view_current_balance():
     with open('history.txt', 'r') as f:
@@ -90,7 +98,7 @@ if __name__ == '__main__':
             debit = input('(Type "cancel" to cancel) How much is the debit?: ')
             if debit == 'cancel':
                 continue
-            elif debit.isdigit():
+            elif isFloat(debit):
                 add_a_debit(float(debit))
 
 
@@ -98,7 +106,7 @@ if __name__ == '__main__':
             credit = input('(Type "cancel" to cancel) How much is the credit?: ')
             if credit == 'cancel':
                 continue
-            elif credit.isdigit():
+            elif isFloat(credit):
                 add_a_credit(float(credit))
 
         elif action == '4' or action == 'history':
