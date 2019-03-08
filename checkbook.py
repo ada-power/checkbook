@@ -1,3 +1,11 @@
+def remove_empty_lines():
+    with open('history.txt','r') as f:
+        lines = f.readlines()
+    for i in lines:
+        if i.strip() == '':
+            lines.remove(i)
+
+
 def view_current_balance():
     with open('history.txt', 'r') as f:
         transaction = f.readlines()
@@ -44,21 +52,17 @@ if __name__ == '__main__':
         print('1) view current balance')
         print('2) record a debit (withdraw)')
         print('3) record a credit (deposit)')
-        print('4) view transaction history')
-        print('5) exit')
+        print('4) exit')
 
 
         action = input('Your choice: ').lower().strip()
-        while action not in ['1','2','3','4', '5']:
-            print('')
-            print('Invalid choice')
-            action = input('Your choice: ').lower().strip()
+
 
         if action == '1' or action == 'view':
             view_current_balance()
 
 
-        elif action == '5' or action == 'exit':
+        elif action == '4' or action == 'exit':
             break
 
 
@@ -76,4 +80,3 @@ if __name__ == '__main__':
                 continue
             elif credit.isdigit():
                 add_a_credit(float(credit))
-    print('\n~~~~ Thanks, have a great day! :) ~~~~\n')
