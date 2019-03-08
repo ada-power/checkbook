@@ -40,6 +40,11 @@ def add_a_credit(credit):
 
     view_current_balance()
 
+def view_transaction_history():
+    with open('history.txt', 'r') as f:
+        transaction = f.readlines()
+        current_balance = transaction
+    print('\n Your transaction history is: $' + '\n')
 
 
 if __name__ == '__main__':
@@ -52,7 +57,8 @@ if __name__ == '__main__':
         print('1) view current balance')
         print('2) record a debit (withdraw)')
         print('3) record a credit (deposit)')
-        print('4) exit')
+        print('4) view transaction history')
+        print('5) exit')
 
 
         action = input('Your choice: ').lower().strip()
@@ -62,7 +68,7 @@ if __name__ == '__main__':
             view_current_balance()
 
 
-        elif action == '4' or action == 'exit':
+        elif action == '5' or action == 'exit':
             break
 
 
