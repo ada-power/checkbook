@@ -28,7 +28,7 @@ def add_a_debit(debit):
     with open('history.txt', 'r') as f:
         transactions = f.read().split('\n')
     #print(transactions)
-    transactions[0] = str(float(transactions[0]) - debit)
+    transactions[0] = f'{float(transactions[0]) - debit:.2f}'
     category = input("What Category is this debit? ")
     transactions.append(f'-${debit:.2f}, {category}')
     #print(transactions)
@@ -43,7 +43,7 @@ def add_a_credit(credit):
     with open('history.txt', 'r') as f:
         transactions = f.read().split('\n')
     #print(transactions)
-    transactions[0] = str(float(transactions[0]) + credit)
+    transactions[0] = f'{float(transactions[0]) + credit:.2f}'
     category = input("\nWhat Category is this credit? ")
     transactions.append(f'+${credit:.2f}, {category}')
     #print(transactions)
