@@ -46,9 +46,9 @@ def add_a_credit(credit):
 
 def view_transaction_history():
     with open('history.txt', 'r') as f:
-        transaction = f.readlines()
-        current_balance = transaction
-    print('\n Your transaction history is: $' + '\n')
+        transaction = f.read()
+        transaction_history = transaction[1]
+    print(f'Your transaction history is: {transaction_history}' + '\n')
 
 
 if __name__ == '__main__':
