@@ -4,6 +4,10 @@ def remove_empty_lines():
     for i in lines:
         if i.strip() == '':
             lines.remove(i)
+    # for i in range(len(lines)):
+    #     lines[i] = lines[i] + '\n'
+    with open('history.txt' , 'w') as f:
+        f.write(''.join(lines))
 
 
 def view_current_balance():
@@ -47,6 +51,7 @@ if __name__ == '__main__':
     print('~~~ Welcome to your terminal checkbook! ~~~')
     print('                                           ')
     while True:
+        remove_empty_lines()
         print('What would you like to do?')
         print('--------------------------')
         print('1) view current balance')
