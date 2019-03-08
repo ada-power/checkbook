@@ -57,8 +57,11 @@ def view_transaction_history():
 
 if __name__ == '__main__':
 
+    viable_actions = ['1','2','3','4','5','view','debit','credit','history','exit']
+
     print('~~~ Welcome to your terminal checkbook! ~~~')
     print('                                           ')
+
     while True:
         remove_empty_lines()
         print('What would you like to do?')
@@ -71,7 +74,9 @@ if __name__ == '__main__':
 
 
         action = input('Your choice: ').lower().strip()
-
+        while action not in viable_actions:
+            print("Invalid Choice")
+            action = input('Your choice: ').lower().strip()
 
         if action == '1' or action == 'view':
             view_current_balance()
