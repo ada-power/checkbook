@@ -21,7 +21,7 @@ def add_a_debit(debit):
         transactions = f.read().split('\n')
     #print(transactions)
     transactions[0] = str(float(transactions[0]) - debit)
-    transactions.append(f'-{debit}')
+    transactions.append(f'-${debit}')
     #print(transactions)
     for i in range(len(transactions)):
         transactions[i] = transactions[i] + '\n'
@@ -35,7 +35,7 @@ def add_a_credit(credit):
         transactions = f.read().split('\n')
     #print(transactions)
     transactions[0] = str(float(transactions[0]) + credit)
-    transactions.append(f'+{credit}')
+    transactions.append(f'+${credit}')
     #print(transactions)
     for i in range(len(transactions)):
         transactions[i] = transactions[i] + '\n'
