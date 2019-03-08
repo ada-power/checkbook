@@ -101,7 +101,7 @@ if __name__ == '__main__':
             elif credit.isdigit():
                 add_a_credit(float(credit))
 
-        elif action == '4':
+        elif action == '4' or action == 'history':
             view_transaction_history()
 
     print('\n~~~~ Thanks, have a great day! :) ~~~~\n')
