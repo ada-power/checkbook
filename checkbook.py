@@ -3,7 +3,7 @@ def view_current_balance():
         transaction = f.readlines()
         current_balance = transaction[0].replace('\n','')
     return current_balance
-
+ 
 def add_a_debit(debit):
     with open('history.txt', 'r') as f:
         transactions = f.read().split('\n')
@@ -41,7 +41,7 @@ if __name__ == '__main__':
         print('4) exit')
         action = input('Your choice: ').lower().strip()
         if action == '1' or action == 'view':
-            print('Your current balance is: $' + view_current_balance())
+            print('Your current balance is: $' + view_current_balance() +'\n ')
         elif action == '4' or action == 'exit':
             break
         elif action == '2' or action == 'debit':
