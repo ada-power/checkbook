@@ -76,4 +76,8 @@ if __name__ == '__main__':
                 continue
             elif credit.isdigit():
                 add_a_credit(float(credit))
+
+        elif action == '4':
+            view_transaction_history()
+
     print('\n~~~~ Thanks, have a great day! :) ~~~~\n')
