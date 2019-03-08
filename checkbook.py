@@ -47,8 +47,12 @@ def add_a_credit(credit):
 def view_transaction_history():
     with open('history.txt', 'r') as f:
         transaction = f.read()
-        transaction_history = transaction[1]
-    print(f'Your transaction history is: {transaction_history}' + '\n')
+    transaction_history = transaction.split('\n')
+    transaction_history = transaction_history[1:]
+    for i in range(len(transaction_history)):
+        transaction_history[i] = transaction_history[i] + '\n'
+    transaction_history = ''.join(transaction_history)
+    print(f'Your transaction history is: \n{transaction_history}')
 
 
 if __name__ == '__main__':
